@@ -1,14 +1,14 @@
-package br.com.Prototype.FullStack.Service;
+package com.example.test.TDD.Service;
 
-import br.com.Prototype.FullStack.Repository.ProductRepository;
-import br.com.Prototype.FullStack.Entity.Product;
+import com.example.test.TDD.Repository.ProductRepository;
+import com.example.test.TDD.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
-public class ProductService implements iProductService{
 
+@Service
+public class ProductService implements iProductService {
     @Autowired
     ProductRepository productRepository;
 

@@ -1,6 +1,6 @@
-package br.com.Prototype.FullStack.Service;
+package com.example.test.TDD.Service;
 
-import br.com.Prototype.FullStack.Entity.Product;
+import com.example.test.TDD.Entity.Product;
 
 import java.util.List;
 

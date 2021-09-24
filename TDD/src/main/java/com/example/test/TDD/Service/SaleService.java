@@ -1,14 +1,14 @@
-package br.com.Prototype.FullStack.Service;
+package com.example.test.TDD.Service;
 
-import br.com.Prototype.FullStack.Entity.Order;
-import br.com.Prototype.FullStack.Entity.Product;
-import br.com.Prototype.FullStack.Entity.Sale;
+import com.example.test.TDD.Entity.Order;
+import com.example.test.TDD.Entity.Product;
+import com.example.test.TDD.Entity.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class SaleService implements iSaleService {
     @Autowired
@@ -29,12 +29,12 @@ public class SaleService implements iSaleService {
 
         for(Order i: bOrderList){
             Product pdct = productService.byId(i.getIdOrder());
-                double productPrice = productList(pdct.getPrice(),
-                                                i.getAmountRequested(),
-                                                i.getOff());
-                finalBill += productPrice;
-                i.setProduct(pdct.getName());
-                orders.add(i);
+            double productPrice = productList(pdct.getPrice(),
+                    i.getAmountRequested(),
+                    i.getOff());
+            finalBill += productPrice;
+            i.setProduct(pdct.getName());
+            orders.add(i);
         }
         return new Sale(finalBill, orders);
     }

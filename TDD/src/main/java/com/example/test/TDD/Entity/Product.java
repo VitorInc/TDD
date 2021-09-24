@@ -1,4 +1,4 @@
-package br.com.Prototype.FullStack.Entity;
+package com.example.test.TDD.Entity;
 
 import lombok.*;
 
@@ -8,8 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode
-
 public class Product {
     private Long id;
     private String name;
@@ -17,4 +15,5 @@ public class Product {
     private Integer amountAvailable;
     private Double price;
     private Double discount;
+
 }

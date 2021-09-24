@@ -1,4 +1,4 @@
-package br.com.Prototype.FullStack.Entity;
+package com.example.test.TDD.Entity;
 
 import lombok.*;
 
@@ -8,13 +8,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode
-
 public class Order {
-
     private Long idOrder;
     private String product;
     private Integer amountRequested;
     private Double off;
+
 
 }

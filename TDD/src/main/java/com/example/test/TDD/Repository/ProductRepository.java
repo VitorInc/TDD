@@ -1,7 +1,6 @@
-package br.com.Prototype.FullStack.Repository;
+package com.example.test.TDD.Repository;
 
-
-import br.com.Prototype.FullStack.Entity.Product;
+import com.example.test.TDD.Entity.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.stream.Collectors;
 @Repository
 public class ProductRepository {
 
-    private final List<Product> products;
 
     public ProductRepository(List<Product> products) {
         this.products = products;
@@ -20,11 +18,11 @@ public class ProductRepository {
     public static List<Product> productList(){
         List<Product> pdct = new ArrayList<Product>();
         pdct.add(new Product
-                        (1l, "Curso Java", "Curso sintaxe java", 10,100.0,0.5)
-                );
+                (1l, "Curso Java", "Curso sintaxe java", 10,100.0,0.5)
+        );
         pdct.add(new Product
-                        (2l, "Curso JavaScript", "Curso sintaxe JS",10 ,100.0,0.5)
-                );
+                (2l, "Curso JavaScript", "Curso sintaxe JS",10 ,100.0,0.5)
+        );
         return pdct;
     }
 
@@ -54,7 +52,7 @@ public class ProductRepository {
 
     public void updateProductData(Product product){
         products.stream().filter(x -> x.getId().equals(product.getId()))
-            .forEach(x -> x.setName(product.getName()));
+                .forEach(x -> x.setName(product.getName()));
         products.stream().filter(x -> x.getId().equals(product.getId()))
                 .forEach(x -> x.setAmountAvailable(product.getAmountAvailable()));
         products.stream().filter(x -> x.getId().equals(product.getId()))
@@ -67,5 +65,5 @@ public class ProductRepository {
         products.removeIf(x -> x.getId().equals(id));
     }
 
-
+    private final List<Product> products;
 }

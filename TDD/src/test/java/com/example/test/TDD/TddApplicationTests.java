@@ -1,10 +1,10 @@
-package br.com.Prototype.FullStack;
+package com.example.test.TDD;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FullStackApplicationTests {
+class TddApplicationTests {
 
 	@Test
 	void contextLoads() {
