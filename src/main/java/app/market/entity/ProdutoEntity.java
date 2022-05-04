@@ -1,6 +1,7 @@
 package app.market.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class ProdutoEntity implements Serializable {
 
@@ -12,12 +13,29 @@ public class ProdutoEntity implements Serializable {
 	private Double valor;
 	private Double descontoMaximo;
 	private Integer quantidade;
-	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(descontoMaximo, id, nomeDoProduto, quantidade, valor);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProdutoEntity other = (ProdutoEntity) obj;
+		return Objects.equals(descontoMaximo, other.descontoMaximo) && Objects.equals(id, other.id)
+				&& Objects.equals(nomeDoProduto, other.nomeDoProduto) && Objects.equals(quantidade, other.quantidade)
+				&& Objects.equals(valor, other.valor);
+	}
 	
+	public ProdutoEntity() {}
 
 	public ProdutoEntity(Long id, String nomeDoProduto, Double valor, Double descontoMaximo, Integer quantidade) {
-		super();
 		this.id = id;
 		this.nomeDoProduto = nomeDoProduto;
 		this.valor = valor;
@@ -63,6 +81,12 @@ public class ProdutoEntity implements Serializable {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [descontoMaximo=" + descontoMaximo + ", id=" + id + ", nomeDoProduto=" + nomeDoProduto
+				+ ", valor=" + valor + ", quantidade=" + quantidade + "]";
 	}
 
 }
